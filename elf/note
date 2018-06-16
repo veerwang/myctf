@@ -1,0 +1,29 @@
+1.elf总共分为三个段。
+
+  a.elf头　相对固定
+  b.
+  c.Session段,包含罗干的Section节点
+
+
+2.elf段
+　a.前４个字节　7f 45 4c 46  固定
+  b.第５个字节　01: 32bit  02:64bit
+  c.第６个字节　01: 小端   02:大端
+  d.第７个字节　01 固定 版本
+  e.第８个字节　00 固定　system V/ABI
+  f.第9~16字节　00 固定
+
+  g.第17~18字节 e_type  0003 表示带有动态库的可执行程序，或动态库文件
+  　　　　　　　 0002 可执行程序
+  h.第19~20字节 e_machine 　003e
+  i.第21~24字节 e_version 0001 0000 固定为1
+  j.第25~32字节 8个字节　为主程序入口
+  k.第33~40字节 8个字节  Programe Head的地址
+  l.第41~48字节 8个字节  Section　Head的地址
+  m.第49~52字节 4个字节  Processor-special flag 固定为0
+  n.第53~54字节 2个字节  elf头的长度
+  o.第55~56字节 2个字节　每个Programe Head entry的大小
+  q.第57~58字节 2个字节  有多少个Programe Head头
+  r.第59~60字节 2个字节  每个Section Head entry的大小
+  r.第61~62字节 2个字节  有多少个Section Head头
+  s.第63~64字节 2个字节  Section Name table索引 
