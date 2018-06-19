@@ -1,0 +1,8 @@
+1.readelf -h play 进行elf文件头的查询
+  readelf -a play 进行elf文件全分析
+
+2.objdump -d play 进行程序的反汇编
+
+3.objdump -t play 符号表入口
+
+4.hexdump -x play > binary 二进制像是显示
